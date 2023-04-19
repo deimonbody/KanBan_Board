@@ -1,12 +1,8 @@
-import { IssuesService } from "@src/services/issues.service";
-import React, { useEffect } from "react";
+import MainPage from "@src/pages/MainPage";
+import React from "react";
 
 const App: React.FC = () => {
-  useEffect(() => {
-    IssuesService.getAllOpenedIssues();
-    IssuesService.getAllClosedIssues();
-  }, []);
-  return <div />;
+  return <MainPage />;
 };
 
 export default App;
