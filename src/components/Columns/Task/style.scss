@@ -1,0 +1,11 @@
+.task{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    &__title{
+        font-size:1.2rem;
+    }
+    &__subtitle{
+        font-size: 1rem;
+        color:rgb(143 140 140)
+    }
+}
