@@ -8,7 +8,7 @@ export const columnsReducer = (builder: ActionReducerMapBuilder<IState>) => {
     .addCase(getIssues.fulfilled, (state, actions) => {
       const issues = actions.payload.result;
       const newColumns = [...state.columns];
-      newColumns[0].issues = issues.all;
+      newColumns[0].issues = issues.todo;
       newColumns[1].issues = issues.opened;
       newColumns[2].issues = issues.closed;
       state.columns = newColumns;

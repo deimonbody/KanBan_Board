@@ -34,7 +34,6 @@ const Column: React.FC<IProps> = ({
         <div
           className="column-body rounded p-4"
           data-is-column="true"
-          // data-index={index}
           onDragOver={(e) => dragOverHandler(e)}
           onDrop={(e) => dragDropHandler(e, column)}
           onDragLeave={(e) => dragLeaveHandler(e)}
