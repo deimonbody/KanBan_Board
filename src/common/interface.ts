@@ -28,3 +28,9 @@ export interface IGitHubURLComponents {
   owner: string;
   repo: string;
 }
+
+export interface IColumn {
+  id: number;
+  title: string;
+  issues: IIssueResult[];
+}
