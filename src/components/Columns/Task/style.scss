@@ -1,0 +1,19 @@
+.task{
+    cursor: pointer;
+    background-color: #ffc107;
+    overflow: hidden;
+    color:white;
+
+    &__title{
+        font-size:1.2rem;
+    }
+    &__subtitle{
+        font-size: 1rem;
+    }
+
+    p{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow:ellipsis;
+    }
+}

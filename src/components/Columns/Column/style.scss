@@ -1,0 +1,10 @@
+.column-body {
+    background-color: rgb(255, 255, 255);
+    box-shadow:  inset 0px 0px 49px -41px rgba(0,0,0,0.76);
+
+    height: 400px;
+    overflow-y: scroll;
+    &--hovered{
+        background-color: rgba(122, 121, 121, 0.31);    
+    }
+}

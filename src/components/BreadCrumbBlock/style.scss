@@ -1,0 +1,9 @@
+.my-crump-style {
+    .breadcrumb-item+.breadcrumb-item::before{
+        content: ">";
+    }
+    ol{ margin-bottom: 0 };
+    a{
+        text-decoration: none;
+    }
+}
