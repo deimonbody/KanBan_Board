@@ -1,21 +1,53 @@
 import React from "react";
 import "./style.scss";
-import { IIssueResult } from "@src/common/interface";
+import { IColumn, IIssueResult } from "@src/common/interface";
 import Task from "../Task/Task";
 
 interface IProps {
-  title: string;
-  issues: IIssueResult[];
+  column: IColumn;
+  index: number;
+  dragOverHandler: (e: React.DragEvent<HTMLDivElement>) => void;
+  dragDropHandler: (
+    e: React.DragEvent<HTMLDivElement>,
+    column: IColumn,
+  ) => void;
+  dragLeaveHandler: (e: React.DragEvent<HTMLDivElement>) => void;
+  dragStartHandler: (
+    e: React.DragEvent<HTMLDivElement>,
+    column: IColumn,
+    issueData: IIssueResult,
+  ) => void;
 }
 
-const Column: React.FC<IProps> = ({ title, issues }) => {
+const Column: React.FC<IProps> = ({
+  column,
+  index,
+  dragOverHandler,
+  dragDropHandler,
+  dragLeaveHandler,
+  dragStartHandler,
+}) => {
   return (
-    <div className="d-flex flex-column">
-      <p className="text-center fw-bold fs-5">{title}</p>
-      <div className="column-body rounded p-4">
-        {issues.map((el) => (
-          <Task key={el.id} issueData={el} />
-        ))}
+    <div className={`col-4 p-0 ${index === 2 ? "p-0" : "pe-3"}`}>
+      <div className="d-flex flex-column">
+        <p className="text-center fw-bold fs-5">{column.title}</p>
+        <div
+          className="column-body rounded p-4"
+          data-is-column="true"
+          // data-index={index}
+          onDragOver={(e) => dragOverHandler(e)}
+          onDrop={(e) => dragDropHandler(e, column)}
+          onDragLeave={(e) => dragLeaveHandler(e)}
+        >
+          {column.issues.map((el) => (
+            <Task
+              key={el.id}
+              issueData={el}
+              column={column}
+              dragStartHandler={dragStartHandler}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
