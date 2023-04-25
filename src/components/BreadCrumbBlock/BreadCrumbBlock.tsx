@@ -15,28 +15,32 @@ const BreadCrumbBlock: React.FC = () => {
   return (
     <div className="mt-2 my-crump-style d-flex align-items-center">
       {urlComponents ? (
-        <>
+        <div data-testid="mainComponent">
           <Breadcrumb>
             <Breadcrumb.Item
               href={`https://github.com/${urlComponents.owner}`}
               target="_blank"
+              data-testid="breadCrump-owner"
             >
               {urlComponents.owner}
             </Breadcrumb.Item>
             <Breadcrumb.Item
               href={`https://github.com/${urlComponents.owner}/${urlComponents.repo}`}
               target="_blank"
+              data-testid="breadCrump-repo"
             >
               {urlComponents.repo}
             </Breadcrumb.Item>
           </Breadcrumb>
           <div className="d-flex align-items-center ms-4">
             <StarFill color="orange" />
-            <p className="mb-0 ms-2">{countOfStars || 0} stars</p>
+            <p className="mb-0 ms-2" data-testid="starCount">
+              {countOfStars || 0} stars
+            </p>
           </div>
-        </>
+        </div>
       ) : (
-        <div>No url</div>
+        <div data-testid="NoURL">No url</div>
       )}
     </div>
   );

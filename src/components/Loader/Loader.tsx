@@ -4,7 +4,10 @@ import "./style.scss";
 
 const Loader: React.FC = () => {
   return (
-    <div className="position-fixed top-50 start-50 transform-middle">
+    <div
+      className="position-fixed top-50 start-50 transform-middle"
+      data-testid="loaderComponent"
+    >
       <Spinner animation="border" variant="primary" className="loader" />
     </div>
   );

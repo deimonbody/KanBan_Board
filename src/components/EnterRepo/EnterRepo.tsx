@@ -40,12 +40,14 @@ const EnterRepo: React.FC = () => {
               onChange={(e) => {
                 setInputVal(e.target.value);
               }}
+              data-testid="inputTest"
               value={inputVal}
             />
             <Button
               variant="warning"
               className="ms-3 flex-shrink-0"
               onClick={searchRepoHandler}
+              data-testid="buttonTest"
             >
               Load Issues
             </Button>
