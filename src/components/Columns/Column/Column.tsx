@@ -30,8 +30,14 @@ const Column: React.FC<IProps> = ({
   return (
     <div className={`col-4 p-0 ${index === 2 ? "p-0" : "pe-3"}`}>
       <div className="d-flex flex-column">
-        <p className="text-center fw-bold fs-5">{column.title}</p>
+        <p
+          className="text-center fw-bold fs-5"
+          data-testid={`columnTitle-${index}`}
+        >
+          {column.title}
+        </p>
         <div
+          data-testid={`columnBody-${index}`}
           className="column-body rounded p-4"
           data-is-column="true"
           onDragOver={(e) => dragOverHandler(e)}
