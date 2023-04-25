@@ -10,6 +10,7 @@ const App: React.FC = () => {
     <>
       <MainPage />
       <ToastContainer
+        data-testid="toast"
         position="top-right"
         autoClose={2000}
         hideProgressBar={false}

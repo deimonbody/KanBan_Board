@@ -14,13 +14,13 @@ const MainPage: React.FC = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="d-flex flex-column px-5 py-3">
+    <div className="d-flex flex-column px-5 py-3" data-testid="mainPageContent">
       <EnterRepo />
       {issues ? (
-        <>
+        <div data-testid="mainPageIssuesBlock">
           <BreadCrumbBlock />
           <Columns />
-        </>
+        </div>
       ) : (
         <NothingWasFound />
       )}
