@@ -10,6 +10,7 @@
 * ESLint
 * Prettier
 * React-Bootstrap
+* React-Testing-Lib
 
 ## Setup
 To run this project
@@ -22,6 +23,11 @@ Create .env file following the .env-example
 
 ```
 $ npm run start
+
+```
+To run the tests
+```
+$ npm run test
 
 ```
 
